@@ -43,7 +43,19 @@
 
 ## 拉取
 
-### 从 Docker Hub 上直接获取：
+### 从 GitHub Container Registry 获取 fork 仓库构建的镜像：
+
+```
+docker pull ghcr.io/<your-github-username>/docker-easyconnect:TAG
+```
+
+其中 `<your-github-username>` 为你的 GitHub 用户名或组织名。aTrust 镜像对应为：
+
+```
+docker pull ghcr.io/<your-github-username>/docker-atrust:TAG
+```
+
+### 从 Docker Hub 上直接获取上游镜像：
 
 ```
 docker pull hagb/docker-easyconnect:TAG

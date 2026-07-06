@@ -2,7 +2,7 @@
 # 不支持 nftables 时使用 iptables-legacy
 ## 感谢 @BoringCat https://github.com/Hagb/docker-easyconnect/issues/5
 if {
-	[ -z "$IPTABLES_LEGACY" -a -z "$(xtables-legacy-multi iptables-save)" ] &&
+	[ -z "$IPTABLES_LEGACY" ] && [ -z "$(xtables-legacy-multi iptables-save)" ] &&
 	xtables-nft-multi iptables-save &&
 	xtables-nft-multi iptables -A INPUT -j ACCEPT &&
 	xtables-nft-multi iptables -D INPUT -j ACCEPT; } 1>/dev/null 2>/dev/null

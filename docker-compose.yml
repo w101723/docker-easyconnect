@@ -1,6 +1,7 @@
 version: '2'
 services:
     easyconnect:
+        # For images built by your fork workflow, use ghcr.io/<your-github-username>/docker-easyconnect:7.6.7
         image: hagb/docker-easyconnect:7.6.7 # latest, vncless, 7.6.3, vncless-7.6.3, 7.6.7, vncless-7.6.7
         devices:
           - /dev/net/tun

@@ -131,7 +131,7 @@ init_vpn_config() {
 			cd /usr/share/sangfor/EasyConnect/resources/conf/
 			[ -n "$DISABLE_PKG_VERSION_XML" ] && rm pkg_version.xml
 			for file in *; do
-				[ -r "$file" -a ! -L "$file" -a "ECDomainFile" != "$file" ] && cp -r "$file" ~/conf/
+				[ -r "$file" ] && [ ! -L "$file" ] && [ "ECDomainFile" != "$file" ] && cp -r "$file" ~/conf/
 			done
 			cd ~/conf/
 			for file in *; do
@@ -141,9 +141,9 @@ init_vpn_config() {
 			done
 		}
 		## 容器退出时将配置文件同步回 /root/conf。感谢 @Einskai 的点子
-		trap "sync_ec2volume; exit;" SIGINT SIGQUIT SIGSTOP SIGTSTP SIGTERM
+		trap "sync_ec2volume; exit;" SIGINT SIGQUIT SIGTSTP SIGTERM
 	else
-		trap "exit;" SIGINT SIGQUIT SIGSTOP SIGTSTP SIGTERM
+		trap "exit;" SIGINT SIGQUIT SIGTSTP SIGTERM
 	fi
 }
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ -z "$EC_HOST" -o "$(dpkg --print-architecture)" = "$EC_HOST" ]; then
+if [ -z "$EC_HOST" ] || [ "$(dpkg --print-architecture)" = "$EC_HOST" ]; then
 	ecgccpkg=build-essential
 	ecprefix=
 	ec_cc=gcc

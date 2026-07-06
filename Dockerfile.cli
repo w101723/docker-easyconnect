@@ -53,7 +53,7 @@ RUN for i in /usr/share/sangfor/EasyConnect/resources/conf_*/; do \
 
 COPY ./docker-root /
 
-COPY --from=hagb/docker-easyconnect:build /results/fake-hwaddr/ /results/tinyproxy-ws/ /
+COPY --from=docker-easyconnect:build /results/fake-hwaddr/ /results/tinyproxy-ws/ /
 
 ENV PING_INTERVAL=1800
 

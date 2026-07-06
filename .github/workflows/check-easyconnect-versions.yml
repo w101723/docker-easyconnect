@@ -37,10 +37,3 @@ jobs:
           git commit -m "Update pkg_version.xml"
           git push
         if: steps.compare.outputs.different == 'true'
-
-      - name: Rebuild EasyConnect
-        uses: ./.github/actions/build-and-push-docker-image
-        with:
-          registry_username: ${{secrets.DOCKERHUB_USERNAME}}
-          registry_password: ${{secrets.DOCKERHUB_TOKEN}}
-        if: steps.compare.outputs.different == 'true'

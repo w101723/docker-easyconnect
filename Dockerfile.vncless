@@ -35,7 +35,7 @@ RUN /tmp/build-scripts/install-vpn-gui.sh
 
 COPY ./docker-root /
 
-COPY --from=hagb/docker-easyconnect:build /results/fake-hwaddr/ /results/fake-getlogin/ /results/tinyproxy-ws/ /
+COPY --from=docker-easyconnect:build /results/fake-hwaddr/ /results/fake-getlogin/ /results/tinyproxy-ws/ /
 
 ENV PING_INTERVAL=1800
 

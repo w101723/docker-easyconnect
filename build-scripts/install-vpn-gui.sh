@@ -33,7 +33,7 @@ fi &&
 
 ln -fs /bin/false /usr/sbin/dmidecode &&
 
-if [ "EC_CLI" != "$VPN_TYPE" -a "EC_GUI" != "$VPN_TYPE" ]; then
+if [ "EC_CLI" != "$VPN_TYPE" ] && [ "EC_GUI" != "$VPN_TYPE" ]; then
 	exit 0
 fi &&
 
